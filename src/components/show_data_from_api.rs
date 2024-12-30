@@ -1,13 +1,15 @@
-use leptos::*;
+use leptos::{prelude::*, task::spawn_local};
+use log::info;
 
 use crate::api::say_hello::say_hello;
 
 #[component]
 pub fn ShowDataFromApi() -> impl IntoView {
-    let value = create_rw_signal("".to_string());
-    let counter = create_rw_signal(0);
+    let value = RwSignal::new("".to_string());
+    let counter = RwSignal::new(0);
 
     let on_click = move |_| {
+        info!("Button clicked!");
         spawn_local(async move {
             let api_said = say_hello(counter.get()).await.unwrap();
             value.set(api_said);

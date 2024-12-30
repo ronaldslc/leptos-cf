@@ -3,7 +3,7 @@ main = "build/worker/shim.mjs"
 compatibility_date = "2024-09-01"
 
 [build]
-command = "cargo leptos build --release && LEPTOS_OUTPUT_NAME=start-axum worker-build --release --features ssr"
+command = "cargo leptos build --release && LEPTOS_OUTPUT_NAME=leptos-worker worker-build --release --features ssr"
 
 [assets]
 directory = "./public"
