@@ -34,5 +34,6 @@ npm run dev
 # Deploy
 
 ```
+export CLOUDFLARE_TOKEN_API={YOUR_API_KEY}
 npm run deploy
 ```
